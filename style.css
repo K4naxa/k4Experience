@@ -1,5 +1,6 @@
 html,
 body {
+  min-height: 100vh;
   background-color: darkslategray;
   color: white;
   font-size: xx-large;
