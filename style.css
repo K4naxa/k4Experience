@@ -1,10 +1,61 @@
 html,
 body {
   min-height: 100vh;
-  background-color: darkslategray;
+  background-color: #141519;
   color: white;
-  font-size: xx-large;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  font-family: "Roboto Slab", serif;
+}
+
+.GRADIANTED {
+  background: linear-gradient(to right, #c54913, #efb650);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+#header {
+  background-color: #1a1b1f;
+  display: grid;
+  grid-template-areas: "logo mainMenu colorModeSwitch";
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0rem 2rem 0rem 2rem;
+  font-size: 1.2rem;
+  box-shadow: 0px 2px 20px black;
+
+  & .logo {
+    font-size: 1.8rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  & #headerMenu {
+    grid-area: "mainMenu";
+    display: flex;
+    justify-content: center;
+    gap: 1.4rem;
+    color: #5d5f60;
+    align-self: center;
+    min-height: 100%;
+    background: linear-gradient(to right, #c54913, #efb650);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      min-height: 100%;
+
+      &.mainMenuActive {
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+
+  & .colorModeSwitch {
+    grid-area: "colorModeSwitch";
+    display: flex;
+    justify-content: end;
+    align-self: center;
+  }
 }
