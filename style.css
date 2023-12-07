@@ -59,3 +59,45 @@ body {
     align-self: center;
   }
 }
+
+#mainContainer {
+  display: grid;
+  grid-template-areas: "sidemenu aboutme";
+  height: 100%;
+}
+
+.sideMenuContainer {
+  min-height: 100%;
+  background-color: #101012;
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 0px 2px 20px black;
+}
+.aboutMeContainer {
+  background-color: #101012;
+  padding: 1.5rem;
+  margin: 2rem;
+  border-radius: 10px;
+  grid-area: "aboutme";
+  box-shadow: 0px 2px 20px black;
+}
+.aboutMeBlock {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  align-items: center;
+
+  & .aboutMeImg {
+    display: grid;
+    justify-content: center;
+  }
+  & img {
+    max-height: 320px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 0 -100px;
+    box-shadow: 0px 2px 20px #c54913;
+  }
+}
