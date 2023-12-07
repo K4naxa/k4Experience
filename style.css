@@ -62,7 +62,9 @@ body {
 
 #mainContainer {
   display: grid;
-  grid-template-areas: "sidemenu aboutme";
+  grid-template-areas:
+    "sidemenu aboutme"
+    "sidemenu projects"; /* Adjusted grid template areas */
   height: 100%;
 }
 
@@ -72,13 +74,14 @@ body {
   padding: 2rem;
   margin: 2rem;
   box-shadow: 0px 2px 20px black;
+  grid-area: sidemenu;
 }
 .aboutMeContainer {
   background-color: #101012;
   padding: 1.5rem;
   margin: 2rem;
   border-radius: 10px;
-  grid-area: "aboutme";
+  grid-area: aboutme;
   box-shadow: 0px 2px 20px black;
 }
 .aboutMeBlock {
@@ -99,5 +102,62 @@ body {
     object-fit: cover;
     object-position: 0 -100px;
     box-shadow: 0px 2px 20px #c54913;
+  }
+}
+
+.fontPageProjectsContainer {
+  grid-area: projects;
+
+  padding: 1rem;
+  margin: 2rem;
+
+  text-align: center;
+  display: grid;
+  grid-template-areas:
+    "title"
+    "projects";
+
+  & h2 {
+    margin-bottom: 3rem;
+    margin-top: 0;
+  }
+  & .projectGridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: projects;
+  }
+}
+
+.projectGridContainer .project {
+  box-shadow: 0px 2px 20px black;
+  background-color: #101012;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 1rem;
+  position: relative;
+
+  & .imageBox {
+    & .shadow {
+      position: absolute;
+      left: -10px;
+      top: -10px;
+      max-height: 260px;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(16px);
+      opacity: 70%;
+    }
+    & .image {
+      position: relative;
+      top: -10px;
+      left: -10px;
+      max-height: 240px;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 }
